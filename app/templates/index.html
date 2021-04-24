@@ -1,15 +1,27 @@
 {% extends 'base.html'%}
-{% block content%}
-{% block styles %}
-
-<link rel="stylesheet" href="{{url_for('static',fillename='css/styles.css')}}">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artistic Pitch-World</title>
+</head>
+<body>
+    
+    {% block content%}
+    {% block styles %}
+    
+<link rel="stylesheet" href="../static/css/style.css">
 
 {% endblock %}
 
 <h1>One Minute Pitch</h1>
 <p>In life, you only have 60 seconds to impress someone. 1 minute can make or break you.</p>
 <p>How do we make sure that you use your 1 minute to actually say something meaningful?</p>
-<a class="btn btn-outline-secondary">New Pitch</a>
-<a class="btn btn-outline-secondary">View Pitches</a>
+<button type="button" class="btn btn-New Pitch">New Pitch</button>
+<button type="button" class="btn btn-View Pitches">View Pitches</button>
 
 { %endblock% }
+</body>
+</html>
