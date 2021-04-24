@@ -1,0 +1,15 @@
+{% extends 'base.html'%}
+{% block content%}
+{% block styles %}
+
+<link rel="stylesheet" href="{{url_for('static',fillename='css/styles.css')}}">
+
+{% endblock %}
+
+<h1>One Minute Pitch</h1>
+<p>In life, you only have 60 seconds to impress someone. 1 minute can make or break you.</p>
+<p>How do we make sure that you use your 1 minute to actually say something meaningful?</p>
+<a class="btn btn-outline-secondary">New Pitch</a>
+<a class="btn btn-outline-secondary">View Pitches</a>
+
+{ %endblock% }
