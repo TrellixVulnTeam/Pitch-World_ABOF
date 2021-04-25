@@ -3,14 +3,12 @@ from flask_script import Manager,Server
 from app.models import User
 
 #Creating app instance
-app = create_app('Production')
+app = create_app('production')
 manager = Manager(app)
+manager.add_command('server',Server)
 
-#decorator
 @manager.shell
 def make_shell_context():
-    return dict(app = app,db = db,User = User )
-
+    return dict(app = app,db = db,User = User)
 if __name__ == '__main__':
     manager.run()
-    
