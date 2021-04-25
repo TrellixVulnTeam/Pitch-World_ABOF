@@ -1,0 +1,15 @@
+{%extends 'base.html'%}
+{% block styles %}
+{{super()}}
+<link rel="stylesheet" href="../static/css/style.css">
+{% endblock %}
+{%block content%}
+
+   <div class="card">
+    <h2>Your Username is:{{user.username}}</h2>
+    <h2>Your email is:{{user.email}}</h2>
+    <h2>Your Password is:{{user.password}}</h2>
+
+   </div>
+
+{%endblock%}

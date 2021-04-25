@@ -1,9 +1,12 @@
 body {
-    /*background-image: url("/app/static/pictures/bg.jpg");*/
+   /* background-image: url("/app/static/pictures/bg.jpg");*/
+    background: linear-gradient(to right, #b92b27, #1565c0);
     scroll-behavior: smooth;
     text-align: center;
     background-color: black;
-    color: white;
+    color: black;
+    font-size: large;
+    font-weight: 800;
 }
 h1 {
     text-align: center;
