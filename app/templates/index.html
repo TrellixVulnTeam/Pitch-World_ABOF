@@ -1,26 +1,19 @@
-
-{% extends 'base.html'%}
-{% from 'pitch_display_macro.html' import display_pitches %} 
-
+{% extends 'base.html' %}
+{% from 'pitch_display_macro.html' import display_pitches%}
 {% block content%}
 {% block styles %}
-    {{super()}}
+{{super()}}
 <link rel="stylesheet" href="../static/css/style.css">
-{% endblock %} 
-
-<h1>Artistic Pitch-World</h1>
-<!--<a class="btn" href="./signup.html"style="font-size:20px">Sign In</a>
-<br> -->
-<li><a href="/new_post">
-    <span>New Pitch</span>
-    <div class="liquid"></div>
-  </a>
-<br>
-  <a href="/posts">
-    <span>View Pitch</span>
-    <div class="liquid"></div>
-  </a>
-
 {% endblock %}
-</body>
-</html>
+<div class="bg">
+    <div class="p-3 p-md-5 m-md-3 text-center bg-transparent">
+        <div class="col-md-12 p-lg-5 mx-auto my-5">
+            <h3>"There's more than one way to do things.<br>There's always different points of views and styles of pitching."</h3>
+            <h6>~Maryam Muchai~</h6>
+            <br><br>
+            <button type="button" class="btn btn-outline-primary" href="/new_post" style="font-size:40px">New Pitch</a></button>
+            <button type="button" class="btn btn-outline-secondary" href="/posts" style="font-size:40px">View Pitch</a></button>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -2,6 +2,9 @@
 * PITCH-WORLD
 # AUTHOR
 * MARYAM MUCHAI
+## Landing page
+![ScreenshotPitch](https://user-images.githubusercontent.com/78798386/116483343-8d56d580-a88f-11eb-9bdc-f03ea6d81c02.png)
+
 # DESCRIPTION
 * This is a Python-Flask Application that allows users to create a one minute pitch. The users will submit their one minute pitches and other users will vote on them and leave comments.
 # BDD(Behaviour Driven Development)

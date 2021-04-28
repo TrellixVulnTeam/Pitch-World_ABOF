@@ -1,12 +1,12 @@
 import os
 
-
 class Config:
-    debug = True
-    SECRET_KEY = os.environ.get('SECRET_KEY')
-    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://maryam:1234@localhost/pitch'
 
+    SECRET_KEY = os.environ.get('SECRET_KEY')
     UPLOADED_PHOTOS_DEST ='app/static/photos'
+
+    SQLALCHEMY_TRACK_MODIFICATIONS = False
+
 
     #  email configurations
     MAIL_SERVER = 'smtp.googlemail.com'
@@ -24,12 +24,12 @@ class Config:
         pass
 
 class ProdConfig(Config):
-    pass
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://maryam:1234@localhost/pitch'
+
 
 class DevConfig(Config):
     SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://maryam:1234@localhost/pitch'
     DEBUG = True
-
     ENV = 'development'
 
 class TestConfig(Config):

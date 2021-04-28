@@ -3,6 +3,7 @@
 {% from 'comment_macro.html' import display_comments%}
 {% block styles %}
 {{super()}}
+
 {% endblock %}
 {% block content %}
 <div>{{ display_pitches(posts) }}</div>
