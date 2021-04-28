@@ -1,7 +1,7 @@
-from . import db ,login_manager
 from datetime import datetime
+from . import db, login_manager
 from werkzeug.security import generate_password_hash,check_password_hash
-from flask_login import UserMixin , current_user
+from flask_login import UserMixin, current_user
 
 class User(UserMixin, db.Model):
     __tablename__ = 'users'
@@ -9,6 +9,11 @@ class User(UserMixin, db.Model):
     username = db.Column(db.String(255), nullable=False, unique=True)
     email = db.Column(db.String(255), nullable=False, unique=True)
     password = db.Column(db.String(255), nullable=False)
+    post = db.relationship('Post', backref='user', lazy='dynamic')
+    comment = db.relationship('Comment', backref='user', lazy='dynamic')
+    date_created = db.Column(db.DateTime, default=datetime.utcnow)
+    up_vote = db.relationship('Upvote', backref='user', lazy='dynamic')
+    down_vote = db.relationship('Downvote', backref='user', lazy='dynamic')
 
     def save(self):
         db.session.add(self)
@@ -38,13 +43,14 @@ class Post(db.Model):
     __tablename__ = 'posts'
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String, nullable=False)
-    user_id = db.Column(db.String, nullable=False)
     post = db.Column(db.String, nullable=False)
     comment = db.relationship('Comment', backref='post', lazy='dynamic')
     category = db.Column(db.String, nullable=False)
     date_created = db.Column(db.DateTime, default=datetime.utcnow)
     up_vote = db.relationship('Upvote', backref='post', lazy='dynamic')
     down_vote = db.relationship('Downvote', backref='post', lazy='dynamic')
+    user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
+
 
     def save(self):
         db.session.add(self)

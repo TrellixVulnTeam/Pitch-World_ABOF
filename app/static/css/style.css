@@ -1,19 +1,21 @@
 body {
-    background-image: url("/app/static/pictures/bg.jpg");
+    background-image: url("/app/static/pictures/bg2.jpg");
     scroll-behavior: smooth;
     text-align: center;
     color: black;
     font-size: large;
-    font-weight: 800;
+    font-weight: 400;
 
     display: flex;
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-} 
+    background: linear-gradient(to right, #0e0d0e, #1565c0);
+}
+
 h1 {
     text-align: center;
-    color:white;
+    color: black;
 }
 * {
     margin: 0;
@@ -91,3 +93,83 @@ h1 {
       transform: translate(-50%, -75%) rotate(360deg);
     }
   }
+
+.container1 {
+    height: auto;
+    display: flex;
+    justify-content: center;
+}
+.login-text{
+    font-family: 'Quicksand', sans-serif;
+}
+#login{
+font-weight:bold;
+}
+#logo{
+font-family: 'Special Elite', cursive;
+color:#ed5107;
+font-size:20px;
+}
+
+#option-signup{
+margin-top:20px;
+}
+
+
+
+.division {
+    align-items: center;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+}
+
+#centered-card{
+margin:0;
+padding:0;
+}
+
+
+#hellobutton {
+margin-top:20px;
+    border: 0;
+    background: orangered;
+    width: 40px;
+    height: 40px;
+    box-shadow: #989898 0 0 20px;
+    border-radius: 5px;
+    color: white;
+    font-size: 10px;
+    justify-content: right;
+}
+
+#hellobutton:hover {
+    background: darkmagenta;
+}
+
+
+.container {
+  max-width: 900px;
+}
+
+.site-header {
+  background-color: rgba(0, 0, 0, .85);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  backdrop-filter: saturate(180%) blur(20px);
+}
+.site-header a {
+  color: #999;
+  transition: ease-in-out color .15s;
+}
+.site-header a:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+#buttons{
+display:flex;
+}
+.flex-stuff{
+display:flex;
+}
+
