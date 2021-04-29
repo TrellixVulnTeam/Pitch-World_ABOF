@@ -2,7 +2,7 @@ from flask import render_template, redirect, url_for
 from flask_login import login_required, current_user
 
 from . import main
-from .. import db,photos
+from .. import db
 
 from .forms import PostForm, CommentForm, UpdateProfile
 from ..models import Post, Comment, User, Upvote, Downvote
@@ -11,13 +11,13 @@ from ..models import Post, Comment, User, Upvote, Downvote
 @main.route('/')
 def index():
     posts = Post.query.all()
-    art = Post.query.filter_by(category='Art').all()
-    music = Post.query.filter_by(category='Music').all()
-    poetry = Post.query.filter_by(category='Poetry').all()
-    return render_template('index.html', art=art,poetry = poetry, music=music, posts=posts)
+    art = Post.query.filter_by(category='art').all()
+    poetry = Post.query.filter_by(category='poetry').all()
+    music = Post.query.filter_by(category='music').all()
+    return render_template('index.html', art=art,poetry = poetry, music = music, posts = posts)
 
 
-@main.route('/posts')
+@main.route('/posts/', methods=['GET', 'POST'])
 @login_required
 def posts():
     posts = Post.query.all()
@@ -26,7 +26,7 @@ def posts():
     return render_template('pitch_display.html', posts=posts, likes=likes, user=user)
 
 
-@main.route('/new_post', methods=['GET', 'POST'])
+@main.route('/new_post/', methods=['GET', 'POST'])
 @login_required
 def new_post():
     form = PostForm()
@@ -37,7 +37,7 @@ def new_post():
         user_id = current_user._get_current_object().id
         post_obj = Post(post=post, title=title, category=category, user_id=user_id)
         post_obj.save()
-        return redirect(url_for('main.index'))
+        return redirect(url_for('main.new_post'))
     return render_template('pitch.html', form=form)
 
 
