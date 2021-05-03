@@ -80,5 +80,5 @@ After extracting the files,
 
 Contacts:
 Incase of any quoestion or collaboration email at: maryammuchai@gmail.com
-### MIT LICENSE(LICENSE)
+### MIT [LICENSE](LICENSE)
 ### Copyright (c) 2021 Maryam Muchai
