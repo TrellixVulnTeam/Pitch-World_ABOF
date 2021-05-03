@@ -9,7 +9,7 @@ from .forms import RegForm,LoginForm
 
 @auth.route('/login', methods = ['GET','POST'])
 def login():
-    form = LoginForm()
+    form = LoginForm(csrf_enable=False)
     if form.validate_on_submit():
         user = User.query.filter_by(username = form.username.data).first()
         if user != None and user.verify_password(form.password.data):
@@ -26,7 +26,7 @@ def logout():
 
 @auth.route('/signup', methods = ["GET","POST"])
 def signup():
-    form = RegForm()
+    form = RegForm(csrf_enable=False)
     if form.validate_on_submit():
         user = User(email = form.email.data, username = form.username.data, password = form.password.data)
         user.save_u()
